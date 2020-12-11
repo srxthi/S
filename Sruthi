@@ -1,0 +1,23 @@
+// QUESTION 1
+
+SELECT emp_dept, COUNT(*)
+  FROM emp_details
+  GROUP BY emp_dept;
+  
+  
+// QUESTION 2
+
+SELECT DEPARTMENT_NAME, FIRST_NAME, SALARY  
+    FROM departments D 
+       JOIN employees E 
+         ON (D.MANAGER_ID=E.MANAGER_ID)  
+           WHERE  (SYSDATE()-HIRE_DATE) / 365 > 5;
+           
+// QUESTION 3
+
+Select FIRST_NAME,INCENTIVE_AMOUNT from employee a inner join incentives B on A.EMPLOYEE_ID = B.EMPLOYEE_REF_ID
+
+
+//QUESTION 4
+
+SELECT Month from emp_details where max(incentive);
